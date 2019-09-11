@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Header from "./Components/Header";
 import MainPage  from './Components/MainPage/MainPage';
 import FolderPage  from './Components/FolderPage/FolderPage';
 import NotePage  from './Components/NotePage/NotePage';
 import './App.css';
-import data from './dummy-store.js';
-import Header from "./Components/Header";
+import dataBank from './dummy-store.js';
 
 
 class App extends React.Component {
   state = {
-    data: [],
+    data: dataBank,
     notes: [],
     folders: []
   };

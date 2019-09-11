@@ -1,7 +1,7 @@
 import React from 'react';
 import FolderList from "./FolderPage/FolderList";
-import './MainPage.css';
 import NoteList from './NotePage/NoteList'
+import './MainPage.css';
 
 export default class MainPage extends React.Component {
   render() {
