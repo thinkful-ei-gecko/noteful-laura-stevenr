@@ -1,32 +1,46 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { MainPage } from './Components/MainPage';
-import { FolderPage } from './Components/FolderPage';
-import { NotePage } from './Components/NotePage';
+import MainPage  from './Components/MainPage/MainPage';
+import FolderPage  from './Components/FolderPage/FolderPage';
+import NotePage  from './Components/NotePage/NotePage';
 import './App.css';
-import './dummy-store';
+import data from './dummy-store.js';
+import Header from "./Components/Header";
 
 
+class App extends React.Component {
+  state = {
+    data: [],
+    notes: [],
+    folders: []
+  };
 
-function App() {
+  
+  render() {
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route path='/' render={props =>
+            <div><Header /><MainPage /></div>}
+          />
+          <Route path='/folder/:folder-id' render={props =>
+            <div><Header /><FolderPage /></div>}
+          />
+          <Route path='/note/:note-id' render={props =>
+            <div><Header /><NotePage /></div>}
+          />
+        </Switch>
+      </BrowserRouter>
 
-  constructor(){
-    super();
-    this.state = {
-      
-    };
+    )};  
   }
+​
+  export default App;
+  
+  
+  
+  
+  
+  
 
 
-  return (
-    <BrowserRouter>
-      <Switch>
-        <Route path='/' exact component={MainPage} />
-        <Route path='/folder/<with-a-folder-id>' component={FolderPage} />
-        <Route path='/note/<with-a-note-id>' component={NotePage} />
-      </Switch>
-    </BrowserRouter>
-  );
-}
-
-export default App;

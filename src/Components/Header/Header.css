@@ -1,0 +1,12 @@
+header {
+    background-color: burlywood;
+    width: 100%;
+    margin: 0;
+    padding: 12px;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: sans-serif;
+    color: lightgoldenrodyellow;
+  }
